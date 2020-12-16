@@ -101,6 +101,7 @@ service LogicModule {
 	rpc unregisterObjects(UnregisterObjectsRequest) returns (dataclay.communication.grpc.common.ExceptionInfo) {}
 	rpc registerObject(RegisterObjectRequest) returns (RegisterObjectResponse) {}
 	rpc setDataSetIDFromGarbageCollector(SetDataSetIDFromGarbageCollectorRequest) returns (dataclay.communication.grpc.common.ExceptionInfo) {}
+	rpc batchObjectInfo(BatchObjectInfoRequest) returns (BatchObjectInfoResponse) {}
 	
 	// Storage Location
 	rpc setDataSetID(SetDataSetIDRequest) returns (dataclay.communication.grpc.common.ExceptionInfo) {}
