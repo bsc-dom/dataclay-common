@@ -34,6 +34,8 @@ service BackendService {
   rpc FlushAll(google.protobuf.Empty) returns (google.protobuf.Empty) {}
   rpc Stop(google.protobuf.Empty) returns (google.protobuf.Empty) {}
   rpc Drain(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+
+  rpc GetClassInfo(GetClassInfoRequest) returns (GetClassInfoResponse) {}
 }
 
 
@@ -138,4 +140,13 @@ message NewObjectReplicaRequest {
   string backend_id = 2;
   bool recursive = 3;
   bool remotes = 4;
+}
+
+message GetClassInfoRequest {
+  string class_name = 1;
+}
+
+message GetClassInfoResponse {
+  repeated string properties = 1;
+  repeated string activemethods = 2;
 }
